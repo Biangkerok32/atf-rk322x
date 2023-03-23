@@ -14,7 +14,7 @@ AARCH64_TOOLCHAIN_SHA256SUM=6f74b1ee370caeb716688d2e467e5b44727fdc0ed56023fe5c72
 
 ATF_SOURCE_VERSION=2.8
 ATF_SOURCE_FILENAME=arm-trusted-firmware-v${ATF_SOURCE_VERSION}.tar.gz
-ATF_SOURCE_URL=https://codeload.github.com/ARM-software/arm-trusted-firmware/tar.gz/v${ATF_SOURCE_VERSION}
+ATF_SOURCE_URL=https://codeload.github.com/Biangkerok32/arm-trusted-firmware/tar.gz/v${ATF_SOURCE_VERSION}
 ATF_SOURCE_SHA256SUM=42256fa354f32b09972e72e0570a0f73698785927f93163b1d1308c485fcb4a6
 # Set fixed build timestamp for reproducible builds
 ATF_BUILD_EPOCH=1587398203
