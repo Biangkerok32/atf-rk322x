@@ -19,7 +19,7 @@ AARCH64_TOOLCHAIN_SHA256SUM=6f74b1ee370caeb716688d2e467e5b44727fdc0ed56023fe5c72
 
 #Manual add
 ATF_SOURCE_VERSION=7b83eae7baf1166672f4cc34db397c2665fdcbc0
-ATF_SOURCE_FILENAME=arm-trusted-firmware-v${ATF_SOURCE_VERSION}.tar.gz
+ATF_SOURCE_FILENAME=rkbin-v${ATF_SOURCE_VERSION}.tar.gz
 ATF_SOURCE_URL=https://codeload.github.com/ilmich/rkbin/tar.gz/v${ATF_SOURCE_VERSION}
 ATF_SOURCE_SHA256SUM=6ba07342d7d78c8be23f3b2745ee4d273449304b13ceb60a3df40a7ec4245dbc
 # Set fixed build timestamp for reproducible builds
