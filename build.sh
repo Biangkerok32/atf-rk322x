@@ -7,10 +7,10 @@ ARM_TOOLCHAIN_FILENAME=gcc-arm-${ARM_TOOLCHAIN_VERSION}-x86_64-arm-none-eabi.tar
 ARM_TOOLCHAIN_URL=https://developer.arm.com/-/media/Files/downloads/gnu-a/${ARM_TOOLCHAIN_VERSION}/binrel/${ARM_TOOLCHAIN_FILENAME}
 ARM_TOOLCHAIN_SHA256SUM=45225813f74e0c3f76af2715d30d1fbebb873c1abe7098f9c694e5567cc2279c
 
-AARCH64_TOOLCHAIN_VERSION=10.3-2021.07
-AARCH64_TOOLCHAIN_FILENAME=gcc-arm-${AARCH64_TOOLCHAIN_VERSION}-x86_64-aarch64-none-elf.tar.xz
-AARCH64_TOOLCHAIN_URL=https://developer.arm.com/-/media/Files/downloads/gnu-a/${AARCH64_TOOLCHAIN_VERSION}/binrel/${AARCH64_TOOLCHAIN_FILENAME}
-AARCH64_TOOLCHAIN_SHA256SUM=6f74b1ee370caeb716688d2e467e5b44727fdc0ed56023fe5c72c0620019ecef
+#AARCH64_TOOLCHAIN_VERSION=10.3-2021.07
+#AARCH64_TOOLCHAIN_FILENAME=gcc-arm-${AARCH64_TOOLCHAIN_VERSION}-x86_64-aarch64-none-elf.tar.xz
+#AARCH64_TOOLCHAIN_URL=https://developer.arm.com/-/media/Files/downloads/gnu-a/${AARCH64_TOOLCHAIN_VERSION}/binrel/${AARCH64_TOOLCHAIN_FILENAME}
+#AARCH64_TOOLCHAIN_SHA256SUM=6f74b1ee370caeb716688d2e467e5b44727fdc0ed56023fe5c72c0620019ecef
 
 #ATF_SOURCE_VERSION=2.8
 #ATF_SOURCE_FILENAME=arm-trusted-firmware-v${ATF_SOURCE_VERSION}.tar.gz
@@ -70,15 +70,15 @@ extract_toolchain() {
 
 echo "Downloading ARM toolchain ..."
 ARM_TOOLCHAIN_FILENAME="$(download_and_check "$ARM_TOOLCHAIN_URL" "$ARM_TOOLCHAIN_FILENAME" "$ARM_TOOLCHAIN_SHA256SUM")"
-echo "Downloading AARCH64 toolchain ..."
-AARCH64_TOOLCHAIN_FILENAME="$(download_and_check "$AARCH64_TOOLCHAIN_URL" "$AARCH64_TOOLCHAIN_FILENAME" "$AARCH64_TOOLCHAIN_SHA256SUM")"
+#echo "Downloading AARCH64 toolchain ..."
+#AARCH64_TOOLCHAIN_FILENAME="$(download_and_check "$AARCH64_TOOLCHAIN_URL" "$AARCH64_TOOLCHAIN_FILENAME" "$AARCH64_TOOLCHAIN_SHA256SUM")"
 echo "Downloading ATF source ..."
 ATF_SOURCE_FILENAME="$(download_and_check "$ATF_SOURCE_URL" "$ATF_SOURCE_FILENAME" "$ATF_SOURCE_SHA256SUM")"
 
 echo "Extracting ARM toolchain ..."
 CROSS_COMPILE_ARM="$(extract_toolchain "$ARM_TOOLCHAIN_FILENAME")"/bin/arm-none-eabi-
-echo "Extracting AARCH64 toolchain ..."
-CROSS_COMPILE_AARCH64="$(extract_toolchain "$AARCH64_TOOLCHAIN_FILENAME")"/bin/aarch64-none-elf-
+#echo "Extracting AARCH64 toolchain ..."
+#CROSS_COMPILE_AARCH64="$(extract_toolchain "$AARCH64_TOOLCHAIN_FILENAME")"/bin/aarch64-none-elf-
 
 rm -rf output_dir
 mkdir output_dir
@@ -93,7 +93,7 @@ for target in targets/*.sh; do
   BINARY_FORMAT="${BINARY_PATH#*.}"
 
   case "$ARCH" in
-    aarch64) CROSS_COMPILE="$CROSS_COMPILE_AARCH64";;
+    #aarch64) CROSS_COMPILE="$CROSS_COMPILE_AARCH64";;
     arm) CROSS_COMPILE="$CROSS_COMPILE_ARM";;
     *) die Invalid arch "$ARCH";;
   esac
