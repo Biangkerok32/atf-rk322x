@@ -1,5 +1,5 @@
 PLAT=rk3229
-TARGET=bl31
+TARGET=bl2u
 BINARY_PATH=bl2u/bl2u.elf
 ARCH=arm
 #MAKE_FLAGS="ARCH=aarch32 AARCH32_SP=sp_min"
